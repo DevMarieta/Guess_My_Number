@@ -2,10 +2,30 @@
 
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
-
 // document.querySelector('.number').textContent = secretNumber;
 
+{/* <button class="btn again">Again!</button> */}
 
+document.querySelector('.again').addEventListener('click', function() {
+  // Нулиране на състоянието на играта
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  
+  // Нулиране на съобщението
+  document.querySelector('.message').textContent = 'Start guessing...';
+  
+  // Нулиране на въведената стойност в полето за познаване
+  document.querySelector('.guess').value = '';
+  
+  // Нулиране на показването на тайното число
+  document.querySelector('.number').textContent = '?';
+  
+  // Нулиране на счетчика
+  document.querySelector('.score').textContent = score;
+  
+  // Нулиране на цвета на фона
+  document.querySelector('body').style.backgroundColor = '#222';
+});
 
 
 
